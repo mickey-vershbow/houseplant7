@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("../partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("../partials/header") %>
+
+    <section class="hero is-primary has-text-centered">
+      <div class="hero-body">
+        <p class="title">Add A New Plant To Your Collection </p>
+      </div>
+    </section>
+    <br><br>
+    <form action="/user/new" method="POST" class="new-plant-form has-text-centered" id="new-plant-forn">
+      Name: <input type="text" name="name" placeholder="Plant Name"/>
+      <br><br>
+      Description: <input type="description" name="description" placeholder="Brief Description Here"/><br><br>
+      Image URL: <input type="text" name="url" id="image-url" placeholder="Paste URL Here"/>
+      <br><br>
+      Safe for Pets?: <input type="text" name="petsafe" placeholder="Yes or No" />
+      <br><br>
+      Origin: <input type="text" name="origin" placeholder="Species Origin">
+      <br><br><br>
+      <input type="submit" name="" value="Add Plant" />
+    </form>
+    <br><br>
+
+
+    
+    <!-- THE FOOTER TAG PARTIAL -->
+    <%- include("../partials/footer") %>
+  </body>
+</html>

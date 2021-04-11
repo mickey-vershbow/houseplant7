@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+    <main>
+      <% if (isLoggedIn) { %>
+        <a href="/user/profile" class="button is-primary">
+            <strong>Return To Profile</strong>
+          </a>
+      <% } %>
+       <div class="container is-fluid">
+        <% for (plant of seedData) { %>
+        <br />
+        <figure class="image is-128x128">
+          <img src="<%= plant.url %>" />
+          <p class="has-text-centered"><%= plant.name %></p>
+          <% } %>
+        </figure>
+        <br /><br /><br /><br />
+      </div>
+    </main>
+    <!-- THE FOOTER TAG PARTIAL -->
+    <%- include("partials/footer") %>
+  </body>
+</html>

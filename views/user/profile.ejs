@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("../partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("../partials/header") %>
+
+    <!-- DISPLAY OUR PLANTS -->
+
+    <section class="hero is-primary has-text-centered">
+      <div class="hero-body">
+        <p class="title">Your Personal Plant Collection </p>
+        <p class="subtitle">
+          Click on a plant to view details
+        </p>
+      </div>
+    </section>
+
+    <div class="container is-fluid">
+    <% for (plant of plants) { %>
+      <br>
+      <figure class="image is-128x128">
+        <img src="<%= plant.url %>" />
+        <p class="has-text-centered"><%= plant.name %></p>
+        <% } %>
+      </figure>
+      <br><br><br><br>
+    </div>
+
+    <a class="button is-info" id="add-new-plant-button" href="/user/new">Add A New Plant</a>
+
+    <!-- THE FOOTER PARTIAL -->
+    <%- include("../partials/footer") %>
+
+    <body></body>
+  </body>
+</html>

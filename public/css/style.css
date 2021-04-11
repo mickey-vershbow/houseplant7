@@ -1,0 +1,35 @@
+/* HOME PAGE STYLING */
+
+#home-card-container {
+    margin: 20px auto;
+}
+
+#stats-bar {
+    margin: 30px auto;
+}
+
+#info-hero {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#guest-button, #collection-button {
+    margin: 20px;
+}
+
+.plant-name {
+    font-weight: bold;
+    color: black;
+}
+
+#new-plant-form {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#add-new-plant-button {
+border: 1px solid #FFFF00;
+height: 50px;
+width: 60%;
+margin: 50px;
+}

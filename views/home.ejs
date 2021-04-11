@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
+
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <p class="title">Houseplant</p>
+        <p class="subtitle">
+          Discover your new favorite house plants and create your own
+          collections!
+        </p>
+    </div>
+</section>
+
+<br><br>
+
+<section class="hero is-info has-text-centered" id="info-hero">
+  <div class="hero-body">
+    <a href="index" class="button" id="guest-button"><strong>Browse As A Guest</strong></a>
+    <a href="/auth/signup" class="button" id="collection-button"><strong>Create A Collection</strong></a>
+    </p>
+  </div>
+</section>
+
+<br>
+
+    <nav class="level" id="stats-bar">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Users</p>
+          <p class="title">3,456</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Plant Profiles</p>
+          <p class="title">1,235</p>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Tips & Tricks</p>
+          <p class="title">456</p>
+        </div>
+      </div>
+      </div>
+    </nav>
+
+
+    <!-- THE FOOTER TAG PARTIAL -->
+    <%- include("./partials/footer") %>
+  </body>
+</html>
