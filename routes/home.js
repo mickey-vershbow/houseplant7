@@ -36,17 +36,14 @@ const isAuthorized = (req, res, next) => {
 router.use(addUserToRequest);
 
 ///////////////////////////////
-//! Router Routes
+//! LANDING PAGE Router
 ////////////////////////////////
 router.get("/", (req, res) => {
-    res.render("home")
+    res.render("landing")
 })
 
-
-
-
 ////////////////////////
-//! USER ROUTES
+//! USER AUTH ROUTES
 ////////////////////////
 
 // Sign-Up Route
