@@ -10,70 +10,85 @@
 <hr>
 
 <!-- THE HEADER LINKS -->
-<div class="header-links-container2">
+
 <div class="header-links-container">
     <div>
-      <a href="/">BROWSE</a>
+      <a href="/index">BROWSE</a>
     </div>
     <div>
-      <a href="/">COLLECT</a>
+        <a href="/user/profile">COLLECT</a>
     </div>
     <div>
       <a href="/">SHOP</a>
     </div>
     </div>
-    </div>
 <hr>
 
 <!-- BULMA TILES -->
-<div class="bulma-tiles">
+<div class="home-tiles">
 <div class="tile is-ancestor">
   <div class="tile is-vertical is-8">
     <div class="tile">
       <div class="tile is-parent is-vertical">
-        <article class="tile is-child notification is-primary">
-          <p class="title">Vertical...</p>
-          <p class="subtitle">Top tile</p>
-        </article>
-        <article class="tile is-child notification is-warning">
-          <p class="title">...tiles</p>
-          <p class="subtitle">Bottom tile</p>
+        <article class="tile is-child notification">
+          <p class="title">Did you know...</p>
+          <!-- <p class="subtitle">Top tile</p> -->
+          <ul>
+            <li>Plants are great</li>
+            <li>Another fun fact</li>
+            <li>You get the idea</li>
+          </ul>
         </article>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-info">
-          <p class="title">Middle tile</p>
-          <p class="subtitle">With an image</p>
+        <article class="tile is-child notification">
+          <p class="title">Plant Name</p>
+          <p class="subtitle">Brief description</p>
           <figure class="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/640x480.png">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.aidcHsi74nfmuW0aAJCgSgHaLH%26pid%3DApi&f=1">
           </figure>
         </article>
       </div>
     </div>
     <div class="tile is-parent">
-      <article class="tile is-child notification is-danger">
-        <p class="title">Wide tile</p>
-        <p class="subtitle">Aligned with the right tile</p>
+      <article class="tile is-child notification ">
+        <p class="title">Houseplant Shop</p>
+        <p class="subtitle">You never know you need something until you see it in a store!</p>
         <div class="content">
-          <!-- Content -->
+          (shop products here)
         </div>
       </article>
     </div>
   </div>
   <div class="tile is-parent">
-    <article class="tile is-child notification is-success">
+    <article class="tile is-child notification">
       <div class="content">
-        <p class="title">Tall tile</p>
-        <p class="subtitle">With even more content</p>
+        <p class="title">Discover</p>
+        <p class="subtitle">Find your new favorite plants and save them to your personal collection.</p>
         <div class="content">
-          <!-- Content -->
+          <ul class="menu-list">
+      <li><a>Plants for Air Quality</a></li>
+      <li><a>Plants for Air Quality</a></li>
+      <li><a>Safe for Pets and Children</a></li>
+      <li><a>Plants for Stress & Anxiety</a></li>
+      <li><a>Tropical Climate</a></li>
+      <li><a>Topical Climate</a></li>
+      <li><a>Psychoactives and Edibles</a></li>
+
+
+      <ul>
         </div>
       </div>
     </article>
   </div>
 </div>
-
 </div>
+
+
+
+
+   <!-- THE FOOTER TAG PARTIAL -->
+    <%- include("partials/footer") %>
  </body>
 </html>
 

@@ -45,7 +45,7 @@ router.get("/", (req, res) => {
 ///////////////////////////////
 //! HOME PAGE Router
 ////////////////////////////////
-router.get("/home", (req, res) => {
+router.get("/home", isAuthorized, (req, res) => {
     res.render("home")
 })
 
@@ -163,10 +163,10 @@ router.get('/index', (req, res) => {
 router.get("/user/profile", isAuthorized, async (req, res) => {
     // get the updated user
     const user = await User.findOne({ username: req.user.username});
-    // render a template passing it the list of plants
-    res.render("user/profile", {
-        plants: user.plants,
-    });
+        // if user is logged in, render a template passing it the list of plants
+        res.render("user/profile", {
+            plants: user.plants,
+        });
 });
 
 // Create new plants GET route

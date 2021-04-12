@@ -2,7 +2,7 @@
 /* TODO: Mobile / responsible styling */
 
 
-#bg {
+#forest-img {
     background-image: url("https://wallpaper-house.com/data/out/4/wallpaper2you_30891.jpg");
     width: 100%;
     height: 100vh;
@@ -52,10 +52,7 @@ body {
     width: 100%;
 }
 
-.header-links-container2 {
-    margin: 15px;
-}
 
-.bulma-tiles {
-    margin: 15px;
+.home-tiles {
+    margin: 5px;
 }
