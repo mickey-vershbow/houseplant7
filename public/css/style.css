@@ -1,10 +1,14 @@
 /* ----------- LANDING PAGE STYLING --------------- */
+/* TODO: Mobile / responsible styling */
 
-/* * {
-    margin: 0;
-} */
 
-/* .landing-text {
+#bg {
+    background-image: url("https://wallpaper-house.com/data/out/4/wallpaper2you_30891.jpg");
+    width: 100%;
+    height: 100vh;
+}
+
+.landing-text {
   position: absolute;
   right: 0;
   left: 0;
@@ -13,7 +17,7 @@
   display: block;
   text-align: center;
   color: white;
-} */
+}
 body {
   position: relative;
 }
@@ -40,17 +44,11 @@ body {
 
 
 
-#bg {
-    background-image: url("https://wallpaper-house.com/data/out/4/wallpaper2you_30891.jpg");
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-}
 
 
 
 
-/* HOME PAGE STYLING */
+/* OLD HOME PAGE STYLING */
 
 /* #home-card-container {
     margin: 20px auto;
