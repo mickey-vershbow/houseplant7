@@ -42,44 +42,20 @@ body {
   transform: translate(-50%, -50%);
 }
 
+/* ----------- HOME PAGE STYLING --------------- */
 
-
-
-
-
-
-/* OLD HOME PAGE STYLING */
-
-/* #home-card-container {
-    margin: 20px auto;
+ .header-links-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-#stats-bar {
-    margin: 30px auto;
+.header-links-container2 {
+    margin: 15px;
 }
 
-#info-hero {
-    width: 75%;
-    margin: 0 auto;
+.bulma-tiles {
+    margin: 15px;
 }
-
-#guest-button, #collection-button {
-    margin: 20px;
-}
-
-.plant-name {
-    font-weight: bold;
-    color: black;
-}
-
-#new-plant-form {
-    margin: 0 auto;
-    padding: 20px;
-}
-
-#add-new-plant-button {
-border: 1px solid #FFFF00;
-height: 50px;
-width: 60%;
-margin: 50px;
-} */
