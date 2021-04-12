@@ -42,6 +42,14 @@ router.get("/", (req, res) => {
     res.render("landing")
 })
 
+///////////////////////////////
+//! HOME PAGE Router
+////////////////////////////////
+router.get("/home", (req, res) => {
+    res.render("home")
+})
+
+
 ////////////////////////
 //! USER AUTH ROUTES
 ////////////////////////
