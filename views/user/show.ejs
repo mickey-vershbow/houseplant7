@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
+<body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+
+
+  <section class="hero is-primary is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large"><%= plant.name %></p>
+      </div>
+    </section>
+        <br>
+
+<main>
+        <div class="plants-show">
+            <div class="box">
+            <strong>Name: </strong>
+            <%= plant.name %> <br><br>
+            <strong>Description </strong>
+            <%= plant.description %> <br><br>
+            </div>
+            </div>
+            <br>
+            <!-- BACK TO PROFILE LINK -->
+            <a href="/user/profile"><button class="button is-normal is-fullwidth is-outlined" id="create-button">Back to Profile</button></a><br>
+
+                <div class="box" id="logger-box">
+                <ul>
+               <li> Entry created at <%= plant.createdAt %> </li>
+               <li> Entry updated at <%= plant.updatedAt %> </li>
+        </ul>
+        </div>
+</main>
+<br>
+
+
+</body>
+</html>

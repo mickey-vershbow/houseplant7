@@ -15,15 +15,9 @@
     <div>
       <a href="/index">BROWSE</a>
     </div>
-    <% if(req.user.sessionId) { %>
-      <div>
-          <a href="/user/profile">COLLECT</a>
-      </div>
-   <% } else { %>
       <div>
         <a href="/user/profile">COLLECT</a>
     </div>
-   <% } %>
     <div>
       <a href="/">SHOP</a>
     </div>
@@ -37,13 +31,8 @@
     <div class="tile">
       <div class="tile is-parent is-vertical">
         <article class="tile is-child notification">
-          <p class="title">Did you know...</p>
-          <!-- <p class="subtitle">Top tile</p> -->
-          <ul>
-            <li>Plants are great</li>
-            <li>Another fun fact</li>
-            <li>You get the idea</li>
-          </ul>
+          <p class="title is-spaced">Welcome!</p>
+          <p class="subtitle">Use this app to find the perfect plants for your indoor space. <br><br> You can browse our selection of plants, create your own collection, and add your own notes as you experiment.</p>
         </article>
       </div>
       <div class="tile is-parent">
@@ -51,7 +40,7 @@
           <p class="title">Plant Name</p>
           <p class="subtitle">Brief description</p>
           <figure class="image is-4by3">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.aidcHsi74nfmuW0aAJCgSgHaLH%26pid%3DApi&f=1">
+            <img src="" alt="plant-image">
           </figure>
         </article>
       </div>
@@ -73,16 +62,14 @@
         <p class="subtitle">Find your new favorite plants and save them to your personal collection.</p>
         <div class="content">
           <ul class="menu-list">
-      <li><a>Plants for Air Quality</a></li>
-      <li><a>Plants for Air Quality</a></li>
-      <li><a>Safe for Pets and Children</a></li>
-      <li><a>Plants for Stress & Anxiety</a></li>
-      <li><a>Tropical Climate</a></li>
-      <li><a>Topical Climate</a></li>
-      <li><a>Psychoactives and Edibles</a></li>
-
-
-      <ul>
+            <li><a href="https://www.healthline.com/health/healthy-home-guide/benefits-of-indoor-plants#7-benefits" target="_blank">Benefits of Indoor Plants</a></li>
+            <li><a href="https://www.forbes.com/sites/jamiegold/2020/06/16/5-easy-to-grow-houseplants-that-improve-indoor-air-quality/?sh=55cf8d344155" target="_blank">Plants for Air Quality</a></li>
+            <li><a>Safe for Pets and Children</a></li>
+            <li><a>Plants for Stress & Anxiety</a></li>
+            <li><a>Tropical Climate</a></li>
+            <li><a>Topical Climate</a></li>
+            <li><a>Psychoactives and Edibles</a></li>
+          <ul>
         </div>
       </div>
     </article>
