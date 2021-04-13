@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
+<!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
 <body>
-    <h1>hello world</h1>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+
+       <section class="hero is-primary is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large">Edit Plant Entry:</p>
+        <p class="subtitle">"<%= plant.name %>"</p>
+      </div>
+    </section><br>
+
+
+<!---------- NAME ------------>
+<div class="box" id="edit-form">
+<div class="field">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" name="name" value="<%=plant.name%>" placeholder="<%=plant.name%>"><br/>
+  </div>
+</div>
+
+
+
+<!---------- SUBMIT ------------>
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+  <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div>
+</div>
+</div>
 </body>
 </html>

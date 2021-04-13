@@ -17,18 +17,20 @@
       </div>
     </section>
 
-    <div class="container is-fluid">
+      <div class="container is-fluid">
     <% for (plant of plants) { %>
       <br>
       <figure class="image is-128x128">
         <img src="<%= plant.url %>" />
         <p class="has-text-centered"><%= plant.name %></p>
-        <% } %>
+    <% } %>
       </figure>
       <br><br><br><br>
     </div>
 
     <a class="button is-info" id="add-new-plant-button" href="/user/new">Add A New Plant</a>
+
+
 
 
 
