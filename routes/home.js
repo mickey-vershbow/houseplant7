@@ -45,7 +45,7 @@ router.get("/", (req, res) => {
 ///////////////////////////////
 //! HOME PAGE Router
 ////////////////////////////////
-router.get("/home", isAuthorized, (req, res) => {
+router.get("/home", (req, res) => {
     res.render("home")
 })
 

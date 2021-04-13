@@ -15,9 +15,15 @@
     <div>
       <a href="/index">BROWSE</a>
     </div>
-    <div>
+    <% if(req.user.sessionId) { %>
+      <div>
+          <a href="/user/profile">COLLECT</a>
+      </div>
+   <% } else { %>
+      <div>
         <a href="/user/profile">COLLECT</a>
-    </div>
+      </div>
+   <% } %>
     <div>
       <a href="/">SHOP</a>
     </div>
