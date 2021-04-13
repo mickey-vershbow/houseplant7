@@ -115,7 +115,7 @@ router.get("/auth/logout", (req, res) => {
 //! PLANTS INDEX ROUTES
 //////////////////////////
 
-// Plants index route
+// INDEX guest route
 router.get('/index', (req, res) => {
     if (req.session.userId) {
         res.render('index', {
@@ -159,7 +159,7 @@ router.get('/index', (req, res) => {
 });
 
 
-// User profile index route
+// INDEX user/profile
 router.get("/user/profile", isAuthorized, async (req, res) => {
     // get the updated user
     const user = await User.findOne({ username: req.user.username});
@@ -169,7 +169,7 @@ router.get("/user/profile", isAuthorized, async (req, res) => {
         });
 });
 
-// Create new plants GET route
+// NEW plant get route
 router.get("/user/new", isAuthorized, async (req, res) => {
   // get the updated user
   const user = await User.findOne({ username: req.user.username });
@@ -177,16 +177,56 @@ router.get("/user/new", isAuthorized, async (req, res) => {
   res.render("user/new")
 });
 
+// DELETE route
+router.delete("/user/profile/:id", (req, res) => {
+  Plant.findByIdAndRemove(req.params.id, (error, data) => {
+    res.redirect("/user/profile");
+  });
+});
 
-// Plants create route when form submitted
+// UPDATE put route
+router.put("/user/profile/:id", (req, res) => {
+  Plant.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedModel) => {
+      res.redirect("/user/profile");
+    }
+  );
+});
+
+
+
+// CREATE plant post route
 router.post("/user/new", async (req, res) => {
   // fetch up to date user
   const user = await User.findOne({ username: req.user.username });
   // push a new plant and save
   user.plants.push(req.body);
   await user.save();
-  // redirect back to images index
+  // redirect back to user profile
   res.redirect("/user/profile");
+});
+
+// EDIT plant get route
+router.get("/user/profile/:id/edit", (req, res) => {
+  Log.findById(req.params.id, (err, foundPlant) => {
+    res.render("edit.ejs",
+    {
+      plant: foundPlant // pass in found plant
+    }
+    );
+  });
+});
+
+// SHOW page get request
+router.get("/user/profile/:id", (req, res) => {
+  Log.findById(req.params.id, (error, foundLog) => {
+    res.render("show", {
+      log: foundLog
+    });
+  });
 });
 
 ///////////////////////////////
