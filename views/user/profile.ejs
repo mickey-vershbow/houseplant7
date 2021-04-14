@@ -18,10 +18,13 @@
     </section>
 
       <div class="container is-fluid">
-    <% for (plant of plants) { %>
+    <% for(let i = 0; i < plants.length; i++) { %>
       <br>
       <figure class="image is-128x128">
-        <img src="<%= plant.url %>" />
+        <!-- SHOW PAGE -->
+        <a href="/user/profile/<%=plants[i].id;%>"></a>
+          <img src="<%= User.plant.url %>" />
+      </a>
         <p class="has-text-centered"><%= plant.name %></p>
     <% } %>
       </figure>
@@ -29,7 +32,6 @@
     </div>
 
     <a class="button is-info" id="add-new-plant-button" href="/user/new">Add A New Plant</a>
-
 
 
 

@@ -35,6 +35,7 @@ const isAuthorized = (req, res, next) => {
 
 router.use(addUserToRequest);
 
+
 ///////////////////////////////
 //! LANDING PAGE Router
 ////////////////////////////////
@@ -168,6 +169,7 @@ router.get("/user/profile", isAuthorized, async (req, res) => {
             plants: user.plants,
         });
 });
+
 
 // NEW plant get route
 router.get("/user/new", isAuthorized, async (req, res) => {
