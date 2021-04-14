@@ -23,18 +23,18 @@
             </div>
             </div>
             <br>
-            <!-- BACK TO PROFILE LINK -->
-            <a href="/user/profile"><button class="button is-normal is-fullwidth is-outlined" id="create-button">Back to Profile</button></a><br>
 
-             <div class="field is-grouped" id="index-buttons">
+            <!-- <div class="field is-grouped" id="index-buttons"> -->
 
 
               <!-- EDIT FORM -->
 
-            <!-- <a class="button is-medium is-outlined" href="/user/profile/<%=plant._id %>/edit" id="edit-button">Edit Plant</a> -->
+              <!-- <a class="button is-medium is-outlined" href="/user/profile/<%=plant._id %>/edit" id="edit-button">Edit Plant</a> -->
 
-            <form action="/user/profile/<%= plant._id %>?_method=PUT" method = "POST">
-              <input
+              
+
+              <form action="/user/profile/<%= plant._id %>?_method=PUT" method = "POST">
+                <input
                 class="input"
                 type="text"
                 name="name"
@@ -42,25 +42,27 @@
                 value="<%=plant.name%>"
                 />
                 <input type="submit" class="button" value="edit plant" />
-            </form>
+              </form>
 
 
-      <!-- DELETE FORM -->
+              <!-- DELETE FORM -->
 
-      <form action="/user/profile/<%=plant._id; %>?_method=DELETE" method="POST" class="delete-button">
-            <input type="submit" value="Delete Plant" class="button is-danger is-outlined is-small"/>
-      </form>
-        </div>
+              <form action="/user/profile/<%=plant._id; %>?_method=DELETE" method="POST" class="delete-button">
+                <input type="submit" value="Delete Plant" class="button is-danger is-outlined is-small"/>
+              </form>
+            </div>
+            <!-- BACK TO PROFILE LINK -->
+            <a href="/user/profile"><button class="button is-normal is-fullwidth is-outlined" id="create-button">Back to Profile</button></a><br>
 
-                <div class="box" id="logger-box">
-                <ul>
-               <li> Entry created at <%= plant.createdAt %> </li>
-               <li> Entry updated at <%= plant.updatedAt %> </li>
-        </ul>
-        </div>
-</main>
-<br>
+            <div class="box" id="logger-box">
+              <ul>
+                <li> Entry created at <%= plant.createdAt %> </li>
+                <li> Entry updated at <%= plant.updatedAt %> </li>
+              </ul>
+            </div>
+          </main>
+          <br>
 
 
-</body>
-</html>
+        </body>
+        </html>
