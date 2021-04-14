@@ -22,10 +22,10 @@
       <br>
       <figure class="image is-128x128">
         <!-- SHOW PAGE -->
-        <a href="/user/profile/<%=plants[i].id;%>"></a>
-          <img src="<%= User.plant.url %>" />
+        <a href="/user/profile/<%=plants[i]._id;%>">
+          <img src="<%= plants[i].url %>" />
       </a>
-        <p class="has-text-centered"><%= plant.name %></p>
+        <p class="has-text-centered"><%= plants[i].name %></p>
     <% } %>
       </figure>
       <br><br><br><br>

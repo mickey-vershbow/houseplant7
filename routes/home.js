@@ -181,21 +181,19 @@ router.get("/user/new", isAuthorized, async (req, res) => {
 
 // DELETE route
 router.delete("/user/profile/:id", (req, res) => {
-  Plant.findByIdAndRemove(req.params.id, (error, data) => {
-    res.redirect("/user/profile");
-  });
+    // TODO: Get this done
 });
 
 // UPDATE put route
-router.put("/user/profile/:id", (req, res) => {
-  Plant.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true },
-    (err, updatedModel) => {
-      res.redirect("/user/profile");
-    }
-  );
+// TODO: Rewriite this and understand it
+router.put("/user/profile/:id", async (req, res) => {
+    const id = req.params.id;
+    const index = req.user.findIndex((plant) => {
+        return `${plant._id}` === id;
+    });
+    req.user.plants[index].name = req.body.name;
+    req.user.save();
+    res.redirect("/user/profile")
 });
 
 
@@ -212,23 +210,20 @@ router.post("/user/new", async (req, res) => {
 });
 
 // EDIT plant get route
+// findById is a mongoose model method
 router.get("/user/profile/:id/edit", (req, res) => {
-  Log.findById(req.params.id, (err, foundPlant) => {
-    res.render("edit.ejs",
-    {
-      plant: foundPlant // pass in found plant
-    }
-    );
-  });
+// TODO: Get this done
+
 });
 
 // SHOW page get request
 router.get("/user/profile/:id", (req, res) => {
-  Log.findById(req.params.id, (error, foundLog) => {
-    res.render("show", {
-      log: foundLog
-    });
-  });
+    const plant = req.user.plants.find((plant) => {
+        return req.params.id === `${plant._id}`
+    })
+  res.render("user/show.ejs",
+    {plant}
+  )
 });
 
 ///////////////////////////////
