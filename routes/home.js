@@ -195,7 +195,7 @@ router.put("/user/profile/:id", async (req, res) => {
     req.user.plants[index].origin = req.body.origin;
     req.user.save();
     res.redirect("/user/profile");
-    //TODO: Add "NOTES" property to model
+    //TODO: Add "notes", "preferred climate", "also known as" etc. properties to model
     });
 
 
