@@ -118,13 +118,12 @@ router.get("/auth/logout", (req, res) => {
 
 // INDEX guest route
 router.get('/index', (req, res) => {
-    if (req.session.userId) {
+    // if (req.session.userId) {
+    //     res.render('index', {
+    //         isLoggedIn: true,
+    //     });
+    // } else {
         res.render('index', {
-            isLoggedIn: true,
-        });
-    } else {
-        res.render('index', {
-            isLoggedIn: false,
             seedData: [
                 {
                     url:
@@ -156,7 +155,6 @@ router.get('/index', (req, res) => {
                 },
             ],
         });
-    }
 });
 
 

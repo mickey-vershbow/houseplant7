@@ -62,3 +62,17 @@ body {
 .home-tiles {
     margin: 10px;
 }
+
+
+/* ----------- GUEST INDEX PAGE STYLING --------------- */
+
+ .index-plants {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    overflow: visible;
+
+ }

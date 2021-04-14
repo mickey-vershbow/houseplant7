@@ -1,2 +1,0 @@
-- Logout
-- Add additional images to snake plant, etc.? 2nd URL property? Button
