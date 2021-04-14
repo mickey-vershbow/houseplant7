@@ -185,18 +185,19 @@ router.delete("/user/profile/:id", (req, res) => {
 });
 
 // UPDATE put route
-// TODO: Rewriite this and understand it
 router.put("/user/profile/:id", async (req, res) => {
     const id = req.params.id;
-    const index = req.user.findIndex((plant) => {
-        return `${plant._id}` === id;
+    const index = req.user.plants.findIndex((plant) => {
+        `${plant._id}` === id;
+    req.user.plants[index].url = req.body.url;
+    req.user.plants[index].name = req.body.name
+    req.user.plants[index].description = req.body.description;
+    req.user.plants[index].petsafe = req.body.petsafe;
+    req.user.plants[index].origin = req.body.name;
+    //TODO: Add "NOTES" property to model
     });
-    req.user.plants[index].name = req.body.name;
-    req.user.save();
-    res.redirect("/user/profile")
-});
 
-
+})
 
 // CREATE plant post route
 router.post("/user/new", async (req, res) => {
