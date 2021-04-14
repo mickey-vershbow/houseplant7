@@ -27,9 +27,23 @@
             <a href="/user/profile"><button class="button is-normal is-fullwidth is-outlined" id="create-button">Back to Profile</button></a><br>
 
              <div class="field is-grouped" id="index-buttons">
-          <!-- EDIT LINK -->
 
-            <a class="button is-medium is-outlined" href="/user/profile/<%=plant._id %>/edit" id="edit-button">Edit Plant</a>
+
+              <!-- EDIT FORM -->
+
+            <!-- <a class="button is-medium is-outlined" href="/user/profile/<%=plant._id %>/edit" id="edit-button">Edit Plant</a> -->
+
+            <form action="/user/profile/<%= plant._id %>?_method=PUT" method = "POST">
+              <input
+                class="input"
+                type="text"
+                name="name"
+                placeholder="<%=plant.name%>"
+                value="<%=plant.name%>"
+                />
+                <input type="submit" class="button" value="edit plant" />
+            </form>
+
 
       <!-- DELETE FORM -->
 

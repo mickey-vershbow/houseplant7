@@ -187,17 +187,17 @@ router.delete("/user/profile/:id", (req, res) => {
 // UPDATE put route
 router.put("/user/profile/:id", async (req, res) => {
     const id = req.params.id;
-    const index = req.user.plants.findIndex((plant) => {
-        `${plant._id}` === id;
+    const index = req.user.plants.findIndex((plant) => `${plant._id}` === id);
     req.user.plants[index].url = req.body.url;
     req.user.plants[index].name = req.body.name
     req.user.plants[index].description = req.body.description;
     req.user.plants[index].petsafe = req.body.petsafe;
-    req.user.plants[index].origin = req.body.name;
+    req.user.plants[index].origin = req.body.origin;
+    req.user.save();
+    res.redirect("/user/profile");
     //TODO: Add "NOTES" property to model
     });
 
-})
 
 // CREATE plant post route
 router.post("/user/new", async (req, res) => {
@@ -210,12 +210,7 @@ router.post("/user/new", async (req, res) => {
   res.redirect("/user/profile");
 });
 
-// EDIT plant get route
-// findById is a mongoose model method
-router.get("/user/profile/:id/edit", (req, res) => {
-// TODO: Get this done
-
-});
+// EDIT form is in user show page
 
 // SHOW page get request
 router.get("/user/profile/:id", (req, res) => {
