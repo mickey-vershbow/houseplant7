@@ -6,18 +6,31 @@
     <!-- THE HEADER TAG PARTIAL -->
     <%- include("partials/header") %>
     <!-- TODO: add anchor tag / link -->
-
+<hr>
     <main>
       <div class="index-plants">
         <% for (plant of seedData) { %>
-        <br />
+
         <figure class="image is-128x128">
           <img src="<%= plant.url %>" />
           <p class="has-text-centered"><%= plant.name %></p></a>
-          <% } %>
         </figure>
-        <br /><br /><br /><br />
+         <figure class="image is-128x128">
+          <img src="<%= plant.url %>" />
+          <p class="has-text-centered"><%= plant.name %></p></a>
+        </figure>
+         <figure class="image is-128x128">
+          <img src="<%= plant.url %>" />
+          <p class="has-text-centered"><%= plant.name %></p></a>
+        </figure>
+         <figure class="image is-128x128">
+          <img src="<%= plant.url %>" />
+          <p class="has-text-centered"><%= plant.name %></p></a>
+        </figure>
+          <% } %>
+
       </div>
+      <p>a little bit of text</p>
     </main>
     <!-- THE FOOTER TAG PARTIAL -->
     <!-- <%- include("partials/footer") %> -->

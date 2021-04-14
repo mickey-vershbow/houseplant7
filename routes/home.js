@@ -220,6 +220,11 @@ router.get("/user/profile/:id", (req, res) => {
   )
 });
 
+// Carousel Route
+router.get("/carousel", (req, res) => {
+    res.render("carousel");
+})
+
 ///////////////////////////////
 // Export Router
 ////////////////////////////////

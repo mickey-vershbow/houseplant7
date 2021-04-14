@@ -63,16 +63,31 @@ body {
     margin: 10px;
 }
 
-
-/* ----------- GUEST INDEX PAGE STYLING --------------- */
-
  .index-plants {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 100vw;
-    overflow: visible;
-
+    justify-content: space-around;
+    min-width: 100vw;
+    max-width: 100vw;
+    height: fit-content;
+    /* overflow: visible; */
+    gap: 2em;
+    /* border: 1px solid black; */
  }
+
+ .index-plants img {
+   min-width: 200px;
+ }
+
+ .index-plants figure {
+   margin-bottom: 150px;
+   /* margin-top: 10em; */
+    margin-left: 8em;
+    margin-right: 10em;
+ }
+
+
+  /* ----------- CAROUSEL STYLING --------------- */
