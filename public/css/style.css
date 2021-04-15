@@ -126,3 +126,12 @@ body {
   .tile.is-child.notification.has-background-success-light.carousel {
     display: flex;
   }
+
+
+
+/* ------------ GUEST INDEX PAGE STYLING ----------- */
+
+.button.about-button {
+  justify-content: center;
+  
+}
