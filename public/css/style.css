@@ -95,14 +95,14 @@ body {
 
 
   .slider {
-    width: 160px;
-    height: 160px;
+    width: 360px;
+    height: 360px;
     margin: auto;
   }
 
   .slider img {
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 350px;
   }
 
   .slider:nth-child(0) {
@@ -119,4 +119,8 @@ body {
   .controls button {
     font-size: large;
     margin: 2px;
+  }
+
+  .tile.is-child.notification.has-background-success-light.carousel {
+    display: flex;
   }
