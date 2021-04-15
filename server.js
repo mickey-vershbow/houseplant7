@@ -17,6 +17,7 @@ const HomeRouter = require("./routes/home.js");
 // Sessions Middleware
 const session = require("express-session"); // create session cookies
 const connect = require("connect-mongodb-session")(session) // store cookies in mongo
+const axios = require("axios");
 
 /////////////////////////////////////
 // Create Express Application Object

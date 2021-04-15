@@ -223,13 +223,25 @@ router.get("/user/profile/:id", (req, res) => {
 
 // Carousel Route
 router.get("/carousel", (req, res) => {
-    res.render("carousel");
+  res.render("carousel");
 })
 
+  /////////////////////////////
+  // Trefle API Call
+  ///////////////////////////
 
-/////////////////////////////
-
-
+router.get("/trefle", async (req, res) => {
+  // fetch the data with axios
+  const response = await axios(
+    "https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoE"
+  );
+  // grab the hero ddata from the response object
+  const plants = response.data;
+  console.log(plants);
+  res.render("trefle", {
+    plants,
+  });
+});
 
 
 
