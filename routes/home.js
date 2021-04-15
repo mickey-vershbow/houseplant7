@@ -230,6 +230,7 @@ router.get("/carousel", (req, res) => {
   // Trefle API Call
   ///////////////////////////
 
+//! ======== PAGE 1 =========
 router.get("/trefle/index", async (req, res) => {
   // fetch the data with axios
   const response = await axios(
@@ -256,6 +257,36 @@ router.get("/trefle/index", async (req, res) => {
     plantsBySchema,
   });
 });
+
+//! ======== PAGE 2 =========
+router.get("/trefle/index-1", async (req, res) => {
+  // fetch the data with axios
+  const response = await axios(
+    "https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoE&page=2"
+  );
+  // grab the plant data from the response object
+  const plants1 = response.data.data;
+//   console.log(plants1);
+  const plantsBySchema1 = plants1.map(item => {
+      const container = {};
+
+      container.name = item.common_name;
+      container.url = item.image_url;
+      container.description = item.scientific_name;
+      container.origin = item.family_common_name;
+      container.petsafe = item.family;
+
+      return container;
+  })
+  console.log(plantsBySchema1);
+//   res.json(plants);
+
+  res.render("trefle/index-1", {
+    plantsBySchema1,
+  });
+});
+
+
 
 router.all("/test", (req, res) => {
   res.json({
