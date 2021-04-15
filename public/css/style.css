@@ -2,6 +2,7 @@
 /* TODO: Mobile / responsible styling */
 
 
+
 #bg {
     background-image: url("https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60");
     width: 100%;
@@ -91,3 +92,31 @@ body {
 
 
   /* ----------- CAROUSEL STYLING --------------- */
+
+
+  .slider {
+    width: 160px;
+    height: 160px;
+    margin: auto;
+  }
+
+  .slider img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .slider:nth-child(0) {
+    display: visible;
+  }
+
+
+  .controls {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .controls button {
+    font-size: large;
+    margin: 2px;
+  }
