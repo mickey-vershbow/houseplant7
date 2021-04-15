@@ -230,7 +230,7 @@ router.get("/carousel", (req, res) => {
   // Trefle API Call
   ///////////////////////////
 
-router.get("/trefle", async (req, res) => {
+router.get("/trefle/index", async (req, res) => {
   // fetch the data with axios
   const response = await axios(
     "https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoE"
@@ -252,7 +252,7 @@ router.get("/trefle", async (req, res) => {
   console.log(plantsBySchema);
 //   res.json(plants);
 
-  res.render("trefle", {
+  res.render("trefle/index", {
     plantsBySchema,
   });
 });
