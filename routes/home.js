@@ -4,6 +4,7 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const User = require("../models/user")
+const axios = require("axios");
 
 ////////////////////////////////
 //! Custom Middleware Functions
@@ -224,6 +225,13 @@ router.get("/user/profile/:id", (req, res) => {
 router.get("/carousel", (req, res) => {
     res.render("carousel");
 })
+
+
+/////////////////////////////
+
+
+
+
 
 ///////////////////////////////
 // Export Router
