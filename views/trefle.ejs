@@ -11,14 +11,14 @@
 
 <div class="container trefle-plants" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
       <% for (plant of plantsBySchema) { %>
-        <div class="card" style="margin: 30px; max-width: 300px;">
+        <div class="card" style="margin: 30px; max-width: 200px;">
                 <div class="media-content">
                   <p class="title is-4"><%=plant.name%></p>
                   <p class="subtitle is-6"><%=plant.origin%></p>
                   <img src="<%=plant.url%>">
                 </div>
                 <div class="content about-button">
-                    <a href="https://trefle.io/" target="_blank"><button class="button about-button">ABOUT</button></a>
+                    <a href="<%=plant.link%>"  target="_blank"><button class="button about-button">ABOUT</button></a>
                   </div>
                 </div>
       <% } %>
