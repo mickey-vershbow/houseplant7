@@ -7,7 +7,7 @@ const burgerIcon = document.querySelector("#burger");
 const navbarMenu = document.querySelector(".navbar-menu");
 //Carousel
 let image = 1;
-const $img = $('img');
+const $img = $('#carousel-images');
 const $back = $("#back");
 const $forward = $("#forward");
 
@@ -18,6 +18,7 @@ burgerIcon.addEventListener("click", () => {
 });
 
 // Carousel Images Array
+//TODO: Replace image urls with Trefle urls
 const images = [
   "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hc-5-1589572155.jpg",
   "http://www.apieceofrainbow.com/wp-content/uploads/2018/01/best-indoor-plants-flowering-house-plants-easy-low-light-houseplants-apieceofrainbow-1.jpg",
