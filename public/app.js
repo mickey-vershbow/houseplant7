@@ -58,6 +58,3 @@ $back.on("click", backClick)
 
 
 /////////////
-
-
-
