@@ -238,7 +238,7 @@ router.get("/trefle/index", async (req, res) => {
   );
   // grab the plant data from the response object
   const plants = response.data.data;
-//   console.log(plants);
+  console.log(plants);
   const plantsBySchema = plants.map(item => {
       const container = {};
 
@@ -250,7 +250,7 @@ router.get("/trefle/index", async (req, res) => {
 
       return container;
   })
-  console.log(plantsBySchema);
+//   console.log(plantsBySchema);
 //   res.json(plants);
 
   res.render("trefle/index", {

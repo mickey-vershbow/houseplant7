@@ -26,5 +26,8 @@
     "mongoose": "^5.11.20",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "colors.css": "^3.0.0"
   }
 }

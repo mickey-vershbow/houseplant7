@@ -7,9 +7,18 @@
     <body>
         <!-- THE HEADER TAG PARTIAL -->
         <%- include("../partials/header") %>
-        <main>
 
-<div class="container trefle-plants" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+ <section class="hero is-header is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title">Plants Index via <a href="https://trefle.io" target="_blank">TREFLE</a></p>
+        <p class="subtitle">Page 2</p>
+      </div>
+    </section>
+
+
+<main>
+
+    <div class="container trefle-plants" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
       <% for (plant of plantsBySchema1) { %>
         <div class="card" style="margin: 30px; max-width: 200px;">
                 <div class="media-content">
