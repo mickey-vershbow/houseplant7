@@ -16,7 +16,7 @@
 
 
 <main>
-    <div class="container trefle-plants" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <div class="container trefle-plants" id="plants-index" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
       <% for (plant of plantsBySchema) { %>
         <div class="card" style="margin: 30px; max-width: 200px;">
                 <div class="media-content">
@@ -31,7 +31,7 @@
       <% } %>
   </div>
 
-  <button>NEXT ↦</button>
+  <button id="nextPage">NEXT ↦</button>
   <!-- <a href="/trefle/index-1"><button class="button-page2">NEXT ↦</button></a> -->
 
         </main>

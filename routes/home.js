@@ -5,6 +5,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const User = require("../models/user")
 const axios = require("axios");
+// const $pageNumber = require("../public/app.js");
 
 ////////////////////////////////
 //! Custom Middleware Functions
@@ -159,6 +160,66 @@ router.get('/index', (req, res) => {
 });
 
 
+  /////////////////////////////
+  // Trefle Index API Call
+  ///////////////////////////
+
+//! ======== PAGE 1 =========
+router.get("/trefle/index", async (req, res) => {
+  // fetch the data with axios
+  const response = await axios(
+    `https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoEpage=${pageNumber}`
+  );
+  // grab the plant data from the response object
+  const plants = response.data.data;
+  console.log(plants);
+  const plantsBySchema = plants.map(item => {
+      const container = {};
+
+      container.name = item.common_name;
+      container.url = item.image_url;
+      container.description = item.scientific_name;
+      container.origin = item.family_common_name;
+      container.petsafe = item.family;
+
+      return container;
+  })
+//   console.log(plantsBySchema);
+//   res.json(plants);
+
+  res.render("trefle/index", {
+    plantsBySchema,
+  });
+});
+
+//! ======== PAGE 2 =========
+router.get("/trefle/index-1", async (req, res) => {
+  // fetch the data with axios
+  const response = await axios(
+    "https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoE&page=2"
+  );
+  // grab the plant data from the response object
+  const plants1 = response.data.data;
+//   console.log(plants1);
+  const plantsBySchema1 = plants1.map(item => {
+      const container = {};
+
+      container.name = item.common_name;
+      container.url = item.image_url;
+      container.description = item.scientific_name;
+      container.origin = item.family_common_name;
+      container.petsafe = item.family;
+
+      return container;
+  })
+  console.log(plantsBySchema1);
+//   res.json(plants);
+
+  res.render("trefle/index-1", {
+    plantsBySchema1,
+  });
+});
+
 // INDEX user/profile
 router.get("/user/profile", isAuthorized, async (req, res) => {
     // get the updated user
@@ -225,66 +286,6 @@ router.get("/user/profile/:id", (req, res) => {
 router.get("/carousel", (req, res) => {
   res.render("carousel");
 })
-
-  /////////////////////////////
-  // Trefle API Call
-  ///////////////////////////
-
-//! ======== PAGE 1 =========
-router.get("/trefle/index", async (req, res) => {
-  // fetch the data with axios
-  const response = await axios(
-    `https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoEpage=${pageNumber}`
-  );
-  // grab the plant data from the response object
-  const plants = response.data.data;
-  console.log(plants);
-  const plantsBySchema = plants.map(item => {
-      const container = {};
-
-      container.name = item.common_name;
-      container.url = item.image_url;
-      container.description = item.scientific_name;
-      container.origin = item.family_common_name;
-      container.petsafe = item.family;
-
-      return container;
-  })
-//   console.log(plantsBySchema);
-//   res.json(plants);
-
-  res.render("trefle/index", {
-    plantsBySchema,
-  });
-});
-
-//! ======== PAGE 2 =========
-router.get("/trefle/index-1", async (req, res) => {
-  // fetch the data with axios
-  const response = await axios(
-    "https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoE&page=2"
-  );
-  // grab the plant data from the response object
-  const plants1 = response.data.data;
-//   console.log(plants1);
-  const plantsBySchema1 = plants1.map(item => {
-      const container = {};
-
-      container.name = item.common_name;
-      container.url = item.image_url;
-      container.description = item.scientific_name;
-      container.origin = item.family_common_name;
-      container.petsafe = item.family;
-
-      return container;
-  })
-  console.log(plantsBySchema1);
-//   res.json(plants);
-
-  res.render("trefle/index-1", {
-    plantsBySchema1,
-  });
-});
 
 
 

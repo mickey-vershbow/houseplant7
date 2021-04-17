@@ -114,7 +114,7 @@ body {
     max-width: 100vw;
     height: fit-content;
     /* overflow: visible; */
-    gap: 2em;
+    /* gap: 2em; */
     /* border: 1px solid black; */
  /* }
 
@@ -124,10 +124,10 @@ body {
 
  .index-plants figure {
    margin-bottom: 150px;
-   /* margin-top: 10em; */
+   margin-top: 10em;
     margin-left: 8em;
     margin-right: 10em;
- } */ */
+ }
 
 
   /* ----------- CAROUSEL STYLING --------------- */
