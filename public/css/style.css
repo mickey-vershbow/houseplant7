@@ -92,6 +92,12 @@ body {
     margin: 0 9%;
 }
 
+.header-link {
+  color:#FFFFFF;
+  font-weight: bolder;
+  font-size: x-large;
+  text-shadow: 1px 1px #FFDC00;
+}
 
 .home-tiles {
     margin: 10px;

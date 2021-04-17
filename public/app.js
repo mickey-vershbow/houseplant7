@@ -10,6 +10,10 @@ let image = 1;
 const $img = $('#carousel-images');
 const $back = $("#back");
 const $forward = $("#forward");
+//API Index "Next Page"
+const pageNumber = 1;
+
+
 
 // Event listener for hamburger menu
 burgerIcon.addEventListener("click", () => {
@@ -51,6 +55,14 @@ const backClick = (event) => {
     image--;
   }
 };
+
+
+// Handler for "next page" button on Index page
+
+const nextPage = (event => {
+  console.log("yolo");
+  
+})
 
 // Event Listeners for forward/back buttons
 

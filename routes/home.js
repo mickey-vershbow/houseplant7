@@ -234,7 +234,7 @@ router.get("/carousel", (req, res) => {
 router.get("/trefle/index", async (req, res) => {
   // fetch the data with axios
   const response = await axios(
-    "https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoE"
+    `https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoEpage=${pageNumber}`
   );
   // grab the plant data from the response object
   const plants = response.data.data;
