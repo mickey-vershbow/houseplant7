@@ -23,11 +23,14 @@ burgerIcon.addEventListener("click", () => {
 // Carousel Images Array
 //TODO: Replace image urls with Trefle urls
 const images = [
-  "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hc-5-1589572155.jpg",
-  "http://www.apieceofrainbow.com/wp-content/uploads/2018/01/best-indoor-plants-flowering-house-plants-easy-low-light-houseplants-apieceofrainbow-1.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq7z_sz9amPW-sZsNZe1b2d4OHdxM3j7RtFg&usqp=CAU",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrhqkvTRHrGsRROzcM9vc4BTgdtuVDrxtFXw&usqp=CAU",
-  "https://static.onecms.io/wp-content/uploads/sites/39/2020/12/08/MWL-Table-Top-Garden-20208833.jpg",
+  "https://bs.plantnet.org/image/o/019173a51a75465d4d29eb15c627cc262da57865",
+  "https://bs.plantnet.org/image/o/e386787ccfc1992cdd20c0c3b5cdfb60a7155b1e",
+  "https://d2seqvvyy3b8p2.cloudfront.net/a6c77e9053e16faac8a98aebb4b12a68.jpg",
+  "https://bs.plantnet.org/image/o/b9e1596b4b7c6b479ec3c9398c641bc50f4d5880",
+  "https://d2seqvvyy3b8p2.cloudfront.net/79b5638ac34f5dc4f16fa67a35ec296a.jpg",
+  "https://d2seqvvyy3b8p2.cloudfront.net/0bf43348fbf75f7b12ede84b1913c8a9.jpg",
+  "https://storage.googleapis.com/powop-assets/neotropikey/homalium_guianense2_dsasaki_fullsize.jpg",
+  "https://bs.plantnet.org/image/o/461f389919d8846b4060d896e404d4c06674aaf4",
 ];
 
 // Handler for forward button
