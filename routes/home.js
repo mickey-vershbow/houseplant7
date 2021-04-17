@@ -163,6 +163,7 @@ router.get('/index', (req, res) => {
 // ---- page number is dynamic ------\\
 router.get("/trefle/:pageNumber", async (req, res) => {
   // fetch the data with axios
+  console.log(req.params.pageNumber);
   let pageNumber = req.params.pageNumber;
   const response = await axios(
     `https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoE&page=${pageNumber}`
@@ -183,7 +184,7 @@ router.get("/trefle/:pageNumber", async (req, res) => {
 
   res.render("trefle/index", {
     plantsBySchema,
-    next: pageNumber + 1,
+    next: parseInt(req.params.pageNumber) + 1,
     back: pageNumber - 1,
     currentPage: pageNumber,
   });
@@ -253,11 +254,6 @@ router.get("/user/profile/:id", (req, res) => {
     {plant}
   )
 });
-
-// Carousel Route
-router.get("/carousel", (req, res) => {
-  res.render("carousel");
-})
 
 
 
