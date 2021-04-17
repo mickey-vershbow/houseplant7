@@ -185,6 +185,7 @@ router.get("/trefle/:pageNumber", async (req, res) => {
     plantsBySchema,
     next: pageNumber + 1,
     back: pageNumber - 1,
+    currentPage: pageNumber,
   });
 });
 
