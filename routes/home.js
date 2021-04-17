@@ -5,7 +5,7 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const User = require("../models/user")
 const axios = require("axios");
-// const $pageNumber = require("../public/app.js");
+
 
 ////////////////////////////////
 //! Custom Middleware Functions
@@ -51,7 +51,6 @@ router.get("/", (req, res) => {
 router.get("/home", (req, res) => {
     res.render("home")
 })
-
 
 ////////////////////////
 //! USER AUTH ROUTES
@@ -165,10 +164,11 @@ router.get('/index', (req, res) => {
   ///////////////////////////
 
 //! ======== PAGE 1 =========
-router.get("/trefle/index", async (req, res) => {
+router.get("/trefle/:pageNumber", async (req, res) => {
   // fetch the data with axios
+  let pageNumber = req.params.pageNumber;
   const response = await axios(
-    `https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoEpage=${pageNumber}`
+    `https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoE&page=${pageNumber}`
   );
   // grab the plant data from the response object
   const plants = response.data.data;
@@ -189,6 +189,8 @@ router.get("/trefle/index", async (req, res) => {
 
   res.render("trefle/index", {
     plantsBySchema,
+    next: pageNumber + 1,
+    back: pageNumber - 1,
   });
 });
 
@@ -219,6 +221,8 @@ router.get("/trefle/index-1", async (req, res) => {
     plantsBySchema1,
   });
 });
+
+//////////////////////////////////////////
 
 // INDEX user/profile
 router.get("/user/profile", isAuthorized, async (req, res) => {

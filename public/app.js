@@ -17,9 +17,7 @@ let image = 1;
 const $img = $("#carousel-images");
 const $back = $("#back");
 const $forward = $("#forward");
-//API Index "Next Page"
-let pageNumber = 1;
-const $nextPage = $("#nextPage");
+
 
 // Event listener for hamburger menu
 burgerIcon.addEventListener("click", () => {
@@ -61,25 +59,11 @@ const backClick = (event) => {
   }
 };
 
-// Handler for "next page" button on Index page
-
-const nextPage = (event) => {
-  // API call
-  (async () => {
-    const response = await axios(
-      `https://trefle.io/api/v1/plants?token=s8drF5lfAM1u6ZQEjpl7y1Nw9hwJN3ms5F717muNPoEpage=${pageNumber}`
-    );
-    console.log(response);
-  })();
-  document.getElementById("#plants-index").textContent = response.data.data;
-  pageNumber++;
-  console.log("yolo");
-};
 
 // Event Listeners for forward/back buttons
 
 $forward.on("click", forwardClick);
 $back.on("click", backClick);
-$nextPage.on("click", nextPage);
+
 
 /////////////
