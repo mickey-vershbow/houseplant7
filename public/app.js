@@ -21,7 +21,7 @@ burgerIcon.addEventListener("click", () => {
 });
 
 // Carousel Images Array
-//TODO: Replace image urls with Trefle urls
+
 const images = [
   "https://bs.plantnet.org/image/o/019173a51a75465d4d29eb15c627cc262da57865",
   "https://bs.plantnet.org/image/o/e386787ccfc1992cdd20c0c3b5cdfb60a7155b1e",
@@ -49,7 +49,7 @@ const forwardClick = (event) => {
 const backClick = (event) => {
   console.log("image");
   if (image === images.length) {
-    image = 5;
+    image = 8;
     $img.attr("src", images[image]);
   } else {
     $img.attr("src", images[image]);
