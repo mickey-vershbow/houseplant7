@@ -9,16 +9,46 @@
 
     <!-- THE HEADER TAG PARTIAL -->
     <%- include("../partials/header") %>
+
+    <section class="hero is-header has-text-centered">
+      <div class="hero-body">
+        <p class="title">New User Signup</p>
+         <p class="subtitle">Already signed up? Click here to Log In</p>
+      </div>
+    </section>
+
     <main>
-        <h1>User Signup</h1>
+        <!-- <h1>User Signup</h1>
         <form action="/auth/signup" method="post">
         <input type="text" name="username" placeholder="username" />
         <input type="text" name="password" placeholder="password" />
-        <input type="submit" value="sign up" />
-        </form>
-    </main>
+        <input type="submit" value="sign up" /> -->
 
-    <h2>Already signed up? Click here to Log In</h2>
+
+
+<form action="/auth/signup" method="post" id="signup-form">
+    <div class="field">
+    <label class="label">Username</label>
+    <div class="control">
+        <input class="input" type="text" placeholder="username" name="username" />
+    </div>
+    </div>
+
+    <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+        <input class="input" type="text" placeholder="password" name="password">
+    </div>
+    <div>
+        <input type="submit" value="sign up" id="signup-button"/>
+    </div>
+    </div>
+</form>
+
+
+</main>
+
+
 
     <!-- THE FOOTER TAG PARTIAL -->
     <%- include("../partials/footer") %>

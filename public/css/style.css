@@ -45,7 +45,7 @@ body {
 #landing-title, #landing-subtitle {
     color: #FFFFFF;
     font-weight: 700;
-    text-shadow: 2px 2px 4px #F012BE;
+    text-shadow: 2px 2px 4px #111111;
 }
 
 #enter-site {
@@ -54,7 +54,7 @@ body {
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #F012BE;
+  color: #111111;
 }
 
 
