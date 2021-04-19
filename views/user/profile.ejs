@@ -12,7 +12,8 @@
       <div class="hero-body">
         <p class="title">Your Personal Plant Collection </p>
         <p class="subtitle">
-          Click on a plant to view details
+          <!-- Add new plant button -->
+          <a class="button new-plant-button" href="/user/new">Add A New Plant</a>
         </p>
       </div>
     </section>
@@ -31,10 +32,9 @@
       <br><br><br><br>
     </div>
 
-    <a class="button is-info" id="add-new-plant-button" href="/user/new">Add A New Plant</a>
 
-
-
+    <!-- Log out button -->
+    <a class="button logout-button" href="/user/logout">Log Out</a>
 
     <!-- THE FOOTER PARTIAL -->
     <%- include("../partials/footer") %>

@@ -55,8 +55,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #111111;
+  background-color: #DDDDDD;
+  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
 }
 
+#enter-site:hover {
+  box-shadow: 0 12px 16px 0 #111111, 0 17px 50px 0 #111111;
+}
 
 /* ----------- HEADER and NAVBAR STYLING --------------- */
 .is-header {
@@ -174,7 +179,38 @@ body {
 
 .button.about-button {
   justify-content: center;
+  font-size: small;
 }
+
+
+/* ------------ USER PROFILE STYLING ----------- */
+
+/* .profile-buttons {
+  display: flex;
+  padding: 20px;
+} */
+
+.button.new-plant-button {
+  margin-top: 20px;
+  transition-duration: 0.4s;
+}
+
+.button.new-plant-button:hover {
+  background-color: #01FF70;
+  font-style: bolder;
+}
+
+.button.logout-button {
+  margin-top: 20px;
+  transition-duration: 0.4s;
+}
+
+.button.logout-button:hover {
+  background-color: #85144b;
+  color: #FFFFFF;
+  font-style: bolder;
+}
+
 
 /* ------------ FOOTER PAGE STYLING ----------- */
 
