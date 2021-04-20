@@ -42,14 +42,14 @@ router.use(addUserToRequest);
 //! LANDING PAGE Router
 ////////////////////////////////
 router.get("/", (req, res) => {
-    res.render("landing")
+        res.render("landing");
 })
 
 ///////////////////////////////
 //! HOME PAGE Router
 ////////////////////////////////
 router.get("/home", (req, res) => {
-    res.render("home")
+        res.render("home");
 })
 
 ////////////////////////
@@ -192,7 +192,7 @@ router.get("/trefle/:pageNumber", async (req, res) => {
 
 
 //////////////////////////////////////////
-
+// TODO: add isAuthorized to user routes?
 // INDEX user/profile
 router.get("/user/profile", isAuthorized, async (req, res) => {
     // get the updated user
@@ -213,12 +213,14 @@ router.get("/user/new", isAuthorized, async (req, res) => {
 });
 
 // DELETE route
-router.delete("/user/profile/:id", (req, res) => {
-    // TODO: Get this done
+router.delete("/user/profile/:id", isAuthorized, (req, res) => {
+    User.findByIdAndRemove(req.params.id, (error, data) => {
+        res.redirect("/user/profile");
+    })
 });
 
 // UPDATE put route
-router.put("/user/profile/:id", async (req, res) => {
+router.put("/user/profile/:id", isAuthorized, async (req, res) => {
     const id = req.params.id;
     const index = req.user.plants.findIndex((plant) => `${plant._id}` === id);
     req.user.plants[index].url = req.body.url;
@@ -233,7 +235,7 @@ router.put("/user/profile/:id", async (req, res) => {
 
 
 // CREATE plant post route
-router.post("/user/new", async (req, res) => {
+router.post("/user/new", isAuthorized, async (req, res) => {
   // fetch up to date user
   const user = await User.findOne({ username: req.user.username });
   // push a new plant and save
@@ -246,8 +248,8 @@ router.post("/user/new", async (req, res) => {
 // EDIT form is in user show page
 
 // SHOW page get request
-router.get("/user/profile/:id", (req, res) => {
-    const plant = req.user.plants.find((plant) => {
+router.get("/user/profile/:id", isAuthorized, async (req, res) => {
+    const plant = await req.user.plants.find((plant) => {
         return req.params.id === `${plant._id}`
     })
   res.render("user/show.ejs",
