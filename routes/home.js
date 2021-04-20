@@ -43,10 +43,8 @@ router.use(addUserToRequest);
 ////////////////////////////////
 router.get("/", (req, res) => {
     if(req.session.userId) {
-        isLoggedIn: true,
         res.render("landing", {isLoggedIn: true});
     } else {
-        isLoggedIn: false,
         res.render("landing", {isLoggedIn: false});
     }
 })
