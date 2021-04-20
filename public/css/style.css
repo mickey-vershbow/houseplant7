@@ -282,9 +282,11 @@ body {
 .container.is-fluid.profile-plants {
     height: 80vh;
     /* border: 1px solid red; */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+}
+
+.plant-name {
+  font-size: xx-large;
+  color: #111111;
 }
 
 /* ------ USER AUTH STYLING --------  */

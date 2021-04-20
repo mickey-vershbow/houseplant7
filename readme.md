@@ -50,6 +50,8 @@ The Native Plants app was originally designed as a "house plant" app, wherein us
 
 - Keeping projects within a realistic scope (in regard to timeline) is key to actually producing a functional project. A lot of features that I imagined would be simple were, in fact, not simple at all.
 
+- Work on branches, no matter how small the task!
+
 ## The IceBox
 
 - Refactor the app as "Native Plants"
