@@ -1,5 +1,9 @@
 /* ----------- ALL PAGES STYLING --------------- */
 
+* {
+  font-family: 'Anonymous Pro', monospace;
+}
+
 body {
   background-color: #7fdbff;
 }
@@ -223,6 +227,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.main-text {
+  
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: wrap; */
+  margin-left: 6px;
 }
 
 .main-card .main-media {
