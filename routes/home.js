@@ -79,7 +79,7 @@ router.post("/auth/signup", async (req, res) => {
 
 // Login Routes
 router.get("/auth/login", (req, res) => {
-    res.render("auth/login");
+    res.render("auth/login", { isLoggedIn: req.session.userId });
 });
 
 router.post("/auth/login", async (req, res, next) => {
@@ -118,47 +118,6 @@ router.get("/user/logout", (req, res) => {
 //! PLANTS INDEX ROUTES
 //////////////////////////
 
-// INDEX guest route
-router.get('/index', (req, res) => {
-    // if (req.session.userId) {
-    //     res.render('index', {
-    //         isLoggedIn: true,
-    //     });
-    // } else {
-        res.render('index', {
-            seedData: [
-                {
-                    url:
-                        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.5xXdmr-fIdI0sTMxOxMj5QAAAA%26pid%3DApi&f=1',
-                    name: 'Snake Plant',
-                    description:
-                        "some text",
-                    petsafe: 'Moderate Risk',
-                    origin: 'West Africa',
-                },
-                {
-                    url:
-                        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fwww.worldtopupdates.com%2Fwp-content%2Fuploads%2F2017%2F08%2Fimage-result-for-peace-lily.jpeg%3Fresize%3D1060%252C1378&f=1&nofb=1',
-                    name: 'Peace Lily',
-                    description:
-                        "some text",
-                    petsafe: 'No',
-                    origin: 'The rainforests of Central and South America',
-                },
-                {
-                    url:
-                        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbalconygardenweb-lhnfx0beomqvnhspx.netdna-ssl.com%2Fwp-content%2Fuploads%2F2018%2F11%2Fspider-plant-indoors.jpg&f=1&nofb=1',
-                    name: 'Spider Plant',
-                    description:
-                        "some text",
-                    petsafe: 'Yes',
-                    origin:
-                        'Tropical and Southern Africa, but has become naturalized in other parts of the world, including western Australia.',
-                },
-            ],
-        });
-});
-
 
 // Trefle Index API Call
 // ---- page number is dynamic ------\\
@@ -193,15 +152,14 @@ router.get("/trefle/:pageNumber", async (req, res) => {
 });
 
 
-//////////////////////////////////////////
-// TODO: add isAuthorized to user routes?
 // INDEX user/profile
 router.get("/user/profile", isAuthorized, async (req, res) => {
     // get the updated user
     const user = await User.findOne({ username: req.user.username});
         // if user is logged in, render a template passing it the list of plants
         res.render("user/profile", {
-            plants: user.plants,
+          plants: user.plants,
+          isLoggedIn: req.session.userId,
         });
 });
 
@@ -211,13 +169,13 @@ router.get("/user/new", isAuthorized, async (req, res) => {
   // get the updated user
   const user = await User.findOne({ username: req.user.username });
   // render a template passing it the list of plants
-  res.render("user/new")
+  res.render("user/new", { isLoggedIn: req.session.userId });
 });
 
 // DELETE route
 router.delete("/user/profile/:id", isAuthorized, (req, res) => {
     User.findByIdAndRemove(req.params.id, (error, data) => {
-        res.redirect("/user/profile");
+        res.redirect("/user/profile", { isLoggedIn: req.session.userId });
     })
 });
 
@@ -231,7 +189,7 @@ router.put("/user/profile/:id", isAuthorized, async (req, res) => {
     req.user.plants[index].petsafe = req.body.petsafe;
     req.user.plants[index].origin = req.body.origin;
     req.user.save();
-    res.redirect("/user/profile");
+    res.redirect("/user/profile", { isLoggedIn: req.session.userId });
     //TODO: Add "notes", "preferred climate", "also known as" etc. properties to model
     });
 
@@ -244,10 +202,22 @@ router.post("/user/new", isAuthorized, async (req, res) => {
   user.plants.push(req.body);
   await user.save();
   // redirect back to user profile
-  res.redirect("/user/profile");
+  res.redirect("/user/profile", { isLoggedIn: req.session.userId });
 });
 
 // EDIT form is in user show page
+// router.get("/user/:id/edit", async (req, res) => {
+//   const plants = await User.findById(
+//     req.params.id,
+//     (err, foundPlant) => {
+//       console.log("foundPlant", foundPlant);
+//       res.render("user/edit", {
+//         plant: foundPlant,
+//         isLoggedIn: req.session.userId,
+//       });
+//     }
+//   );
+// });
 
 // SHOW page get request
 router.get("/user/profile/:id", isAuthorized, async (req, res) => {
@@ -255,7 +225,10 @@ router.get("/user/profile/:id", isAuthorized, async (req, res) => {
         return req.params.id === `${plant._id}`
     })
   res.render("user/show.ejs",
-    {plant}
+    {
+        plant,
+        isLoggedIn: req.session.userId
+    }
   )
 });
 
