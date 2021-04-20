@@ -59,7 +59,7 @@ router.get("/home", (req, res) => {
 
 // Sign-Up Route
 router.get("/auth/signup", (req, res) => {
-    res.render("auth/signup")
+    res.render("auth/signup", { isLoggedIn: req.session.userId });
 })
 
 router.post("/auth/signup", async (req, res) => {
