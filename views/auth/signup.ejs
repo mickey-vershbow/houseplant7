@@ -17,7 +17,7 @@
       </div>
     </section>
 
-    <main>
+    <main class="signup-container">
         <!-- <h1>User Signup</h1>
         <form action="/auth/signup" method="post">
         <input type="text" name="username" placeholder="username" />
@@ -25,10 +25,10 @@
         <input type="submit" value="sign up" /> -->
 
 
-
+<div class="box signup-form">
 <form action="/auth/signup" method="post" id="signup-form">
     <div class="field">
-    <label class="label">Username</label>
+        <label class="label">Username</label>
     <div class="control">
         <input class="input" type="text" placeholder="username" name="username" />
     </div>
@@ -39,12 +39,25 @@
     <div class="control">
         <input class="input" type="text" placeholder="password" name="password">
     </div>
-    <div>
-        <input type="submit" value="sign up" id="signup-button"/>
-    </div>
+</div>
+
+
+<div class="field">
+  <p class="control" type="submit" value="sign up" id="signup-button">
+    <button class="button is-success">
+      Login
+    </button>
+  </p>
+</div>
+
+
+
+
+
+        </button>
     </div>
 </form>
-
+</div>
 
 </main>
 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("../partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("../partials/header") %>
+
+  <section class="hero is-header is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-large"><%= plant.name %></p>
+      </div>
+    </section>
+        <br>
+
+<main>
+        <div class="plants-show">
+            <div class="box">
+            <strong>Name: </strong>
+            <%= plant.name %> <br><br>
+            <figure class="image is-128x128">
+              <img src="<%= plant.url %>" alt="plant_image">
+            </figure> <br><br>
+            <strong>Safe for pets and children?: </strong>
+            <%= plant.petsafe %> <br><br>
+            <strong>Plant Origin: </strong>
+            <%= plant.origin %> <br><br>
+            <strong>Description: </strong>
+            <%= plant.description %> <br><br>
+            </div>
+            </div>
+            <br>
+
+            <!-- <div class="field is-grouped" id="index-buttons"> -->
+
+              <!-- BACK TO PROFILE LINK -->
+              <a href="/user/profile"><button class="button is-normal is-fullwidth is-outlined" id="create-button">Back to Profile</button></a><br>
+
+
+<!-- EDIT FORM -->
+
+  <section class="hero is-primary is-small has-text-centered">
+      <div class="hero-body">
+        <p class="title is-small">Edit "<%= plant.name %>"</p>
+      </div>
+    </section>
+        <br>
+
+
+
+      <form action="/user/profile/<%= plant._id %>?_method=PUT" method = "POST">
+
+<!---------- NAME ------------>
+                <div class="box" id="edit-form">
+                <div class="field">
+                  <label class="label">Name</label>
+                  <div class="control">
+                    <input class="input" type="text" name="name" value="<%=plant.name%>" placeholder="<%=plant.name%>"><br/>
+                  </div>
+                </div>
+
+<!---------- IMAGE ------------>
+                <div class="box" id="edit-form">
+                <div class="field">
+                  <label class="label">Image URL</label>
+                  <div class="control">
+                    <input class="input" type="text" name="url" value="<%=plant.url%>" placeholder="<%=plant.url%>"><br/>
+                  </div>
+                </div>
+
+<!---------- PETSAFE ------------>
+
+                <div class="field">
+                  <label class="label">Safe for pets and children?</label>
+                  <div class="control">
+                    <input class="input" type="text" name="petsafe" value="<%=plant.petsafe%>" placeholder="<%=plant.petsafe%>"><br/>
+                  </div>
+                </div>
+
+<!---------- ORIGIN ------------>
+
+                <div class="field">
+                  <label class="label">Plant Origin</label>
+                  <div class="control">
+                    <input class="input" type="text" name="origin" value="<%=plant.origin%>" placeholder="<%=plant.origin%>"><br/>
+                  </div>
+                </div>
+
+<!---------- DESCRIPTION ------------>
+                <div class="field">
+                  <label class="label">Description</label>
+                  <div class="control">
+                    <textarea class="textarea" type="text" name="description" value="<%=plant.description%>" placeholder="<%=plant.description%>"></textarea>
+                  </div>
+                </div>
+
+
+<!---------- SUBMIT ------------>
+                <div class="field is-grouped">
+                  <div class="control">
+                    <button class="button is-link">Submit</button>
+                  </div>
+                  <div class="control">
+                    <button class="button is-link is-light">Cancel</button>
+                  </div>
+                </div>
+                </div>
+
+
+      </body>
+    </html>
+</form>
+
+
+              <!-- DELETE FORM -->
+
+              <form action="/user/profile/<%=plant._id; %>?_method=DELETE" method="POST" class="delete-button">
+                <input type="submit" value="Delete Plant" class="button is-danger is-outlined is-fullwidth"/>
+              </form>
+            </div>
+
+            <div class="box" id="logger-box">
+              <ul>
+                <li> Entry created at <%= plant.createdAt %> </li>
+                <li> Entry updated at <%= plant.updatedAt %> </li>
+              </ul>
+            </div>
+          </main>
+          <br>
+
+
+        </body>
+        </html>

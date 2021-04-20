@@ -15,33 +15,36 @@
       </div>
     </section>
 
+<main class="login-container">
+        <div class="box login-form">
+        <form action="/auth/login" method="post">
+        <div class="field">
+            <label class="label">Username</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="username" name="username" />
+            </div>
+        </div>
 
-    <main>
+            <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="password" name="password">
+            </div>
+        </div>
+        
+            <div class="field">
+                <p class="control" type="submit" value="log in" id="login-button">
+                    <button class="button is-success">
+                    Login
+                    </button>
+                </p>
+            </div>
 
-<form action="/auth/login" method="post">
-   <div class="field">
-    <label class="label">Username</label>
-    <div class="control">
-        <input class="input" type="text" placeholder="username" name="username" />
-    </div>
-    </div>
+        </div>
+    </form>
+</div>
 
-    <div class="field">
-    <label class="label">Email</label>
-    <div class="control">
-        <input class="input" type="text" placeholder="password" name="password">
-    </div>
-    <div>
-        <input type="submit" value="log in" id="login-button"/>
-    </div>
-    </div>
-</form>
-
-
-
-
-
-    </main>
+</main>
 
     <!-- THE FOOTER TAG PARTIAL -->
     <%- include("../partials/footer") %>

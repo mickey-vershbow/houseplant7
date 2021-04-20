@@ -106,7 +106,7 @@ router.post("/auth/login", async (req, res, next) => {
 });
 
 // Logout route
-router.get("/auth/logout", (req, res) => {
+router.get("/user/logout", (req, res) => {
     // remove the user property from the session
     req.session.userId = null;
     // redirect back to the home page

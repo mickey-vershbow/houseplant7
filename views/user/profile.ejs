@@ -18,6 +18,7 @@
       </div>
     </section>
 
+    <main class="profile-container">
       <div class="container is-fluid">
     <% for(let i = 0; i < plants.length; i++) { %>
       <br>
@@ -35,6 +36,8 @@
 
     <!-- Log out button -->
     <a class="button logout-button" href="/user/logout">Log Out</a>
+
+    </main>
 
     <!-- THE FOOTER PARTIAL -->
     <%- include("../partials/footer") %>
