@@ -151,9 +151,9 @@ body {
   text-shadow: 1px 1px #ffdc00;
 }
 
-.home-container {
-  /* height: 100vh; */
-}
+/* .home-container {
+  height: 100vh;
+} */
 
 .home-tiles {
   margin: 10px;
@@ -277,6 +277,14 @@ body {
 
 .profile-container {
   height: 80vh;
+}
+
+.container.is-fluid.profile-plants {
+    height: 80vh;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 /* ------ USER AUTH STYLING --------  */
