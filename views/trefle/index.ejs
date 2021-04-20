@@ -18,15 +18,25 @@
     </section>
 
 
-<main>
-    <div class="container trefle-plants" id="plants-index" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+<main class="index-main">
+    <div class="container trefle-plants" id="plants-index" style="display: flex; flex-wrap: wrap; justify-content: space-around">
       <% for (plant of plantsBySchema) { %>
-        <div class="card" style="margin: 30px; max-width: 200px;">
-                <div class="media-content">
+        <div class="card main-card" style="margin: 30px; max-width: 200px;">
+                <div class="media-content main-media">
+                  <div class="main-text">
                   <p class="title is-4"><%=plant.name%></p>
                   <p class="subtitle is-6"><%=plant.origin%></p>
-                   <a href="/trefle/index/<%=plant._id;%>"><img src="<%=plant.url%>"></a>
+                  </div>
+                  <div class="main-image">
+                      <a href="/trefle/index/<%=plant._id;%>"><img src="<%=plant.url%>"></a>
+                  </div>
+                  <div class="main-spacing">
+
+                  </div>
                 </div>
+
+
+
                 <div class="content about-button">
                     <a href="<%=plant.link%>"  target="_blank"><button class="button about-button">ABOUT</button></a>
                   </div>

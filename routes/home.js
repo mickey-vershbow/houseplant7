@@ -38,22 +38,19 @@ const isAuthorized = (req, res, next) => {
 router.use(addUserToRequest);
 
 
+
 ///////////////////////////////
 //! LANDING PAGE Router
 ////////////////////////////////
 router.get("/", (req, res) => {
-    if(req.session.userId) {
-        res.render("landing", {isLoggedIn: true});
-    } else {
-        res.render("landing", {isLoggedIn: false});
-    }
+   res.render("landing");
 })
 
 ///////////////////////////////
 //! HOME PAGE Router
 ////////////////////////////////
 router.get("/home", (req, res) => {
-        res.render("home");
+      res.render("home", { isLoggedIn: req.session.userId });
 })
 
 ////////////////////////
@@ -191,6 +188,7 @@ router.get("/trefle/:pageNumber", async (req, res) => {
     next: parseInt(req.params.pageNumber) + 1,
     back: parseInt(req.params.pageNumber) - 1,
     currentPage: pageNumber,
+    isLoggedIn: req.session.userId,
   });
 });
 
