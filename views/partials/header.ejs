@@ -56,7 +56,20 @@
       </div>
     </div>
 
-
+     <% if (isLoggedIn) { %>
+      <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a href="/user/profile" class="button is-signup">
+                  <strong>Profile</strong>
+                </a>
+                <a href="/user/logout" class="button is-light">
+                  Log Out
+                </a>
+              </div>
+            </div>
+          </div>
+      <% } else { %>
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
@@ -69,6 +82,6 @@
         </div>
       </div>
     </div>
- 
+  <% } %>
   </div>
 </nav>

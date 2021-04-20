@@ -42,7 +42,13 @@ router.use(addUserToRequest);
 //! LANDING PAGE Router
 ////////////////////////////////
 router.get("/", (req, res) => {
-        res.render("landing");
+    if(req.session.userId) {
+        isLoggedIn: true,
+        res.render("landing", {isLoggedIn: true});
+    } else {
+        isLoggedIn: false,
+        res.render("landing", {isLoggedIn: false});
+    }
 })
 
 ///////////////////////////////
