@@ -9,6 +9,7 @@
   <section class="hero is-header is-small has-text-centered">
       <div class="hero-body">
         <p class="title is-large"><%= plant.name %></p>
+        <p class="subtitle">Scroll down to edit</p>
       </div>
     </section>
         <br>
@@ -115,11 +116,9 @@
 
 
 <!-- DELETE FORM  -->
-  <form action="/user/profile/<%=plant._id%>?_method=DELETE" method="POST" class ="deleteLink">
-    <input type="submit" value="DELETE" />
-  </form>
-
-
+     <form action="/user/<%= plant._id %>?_method=delete" method="post">
+        <input class="button" type="submit" value="Delete plant" />
+      </form>
 
 
 

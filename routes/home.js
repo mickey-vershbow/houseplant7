@@ -173,10 +173,14 @@ router.get("/user/new", isAuthorized, async (req, res) => {
 });
 
 // DELETE route
-router.delete("/user/profile/:id", isAuthorized, async (req, res) => {
-    User.findByIdAndRemove(req.params.id, (error, data) => {
-        res.redirect("/user/profile");
-    })
+router.delete("/user/profile/:id", async (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  const index = req.user.plants.findIndex((plant) => `${plant._id}` === id);
+  console.log(index);
+  req.user.plant.splice(index, 1);
+  req.user.save();
+  res.redirect("/user/profile");
 });
 
 // UPDATE put route
@@ -206,18 +210,6 @@ router.post("/user/new", isAuthorized, async (req, res) => {
 });
 
 // EDIT form is in user show page
-// router.get("/user/:id/edit", async (req, res) => {
-//   const plants = await User.findById(
-//     req.params.id,
-//     (err, foundPlant) => {
-//       console.log("foundPlant", foundPlant);
-//       res.render("user/edit", {
-//         plant: foundPlant,
-//         isLoggedIn: req.session.userId,
-//       });
-//     }
-//   );
-// });
 
 // SHOW page get request
 router.get("/user/profile/:id", isAuthorized, async (req, res) => {
