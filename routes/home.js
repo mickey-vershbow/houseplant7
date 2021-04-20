@@ -173,9 +173,9 @@ router.get("/user/new", isAuthorized, async (req, res) => {
 });
 
 // DELETE route
-router.delete("/user/profile/:id", isAuthorized, (req, res) => {
+router.delete("/user/profile/:id", isAuthorized, async (req, res) => {
     User.findByIdAndRemove(req.params.id, (error, data) => {
-        res.redirect("/user/profile", { isLoggedIn: req.session.userId });
+        res.redirect("/user/profile");
     })
 });
 
@@ -189,7 +189,7 @@ router.put("/user/profile/:id", isAuthorized, async (req, res) => {
     req.user.plants[index].petsafe = req.body.petsafe;
     req.user.plants[index].origin = req.body.origin;
     req.user.save();
-    res.redirect("/user/profile", { isLoggedIn: req.session.userId });
+    res.redirect("/user/profile");
     //TODO: Add "notes", "preferred climate", "also known as" etc. properties to model
     });
 

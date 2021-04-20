@@ -130,6 +130,8 @@ body {
 
 /* ----------- HOME PAGE STYLING --------------- */
 
+
+
 .header-links-container {
   display: flex;
   flex-direction: row;
@@ -149,20 +151,27 @@ body {
   text-shadow: 1px 1px #ffdc00;
 }
 
+.home-container {
+  /* height: 100vh; */
+}
+
 .home-tiles {
   margin: 10px;
+  /* height: 100vh;
+  display: flex;
+  justify-content: center; */
 }
 
   /* ----------- CAROUSEL STYLING --------------- */
 
 .slider {
-  width: 600px;
+  width: 700px;
   height: 320px;
   margin: auto;
 }
 
 .slider img {
-  width: 590px;
+  width: 690px;
   height: 310px;
 }
 
@@ -266,6 +275,22 @@ body {
   font-style: bolder;
 }
 
+.profile-container {
+  height: 80vh;
+}
+
+/* ------ USER AUTH STYLING --------  */
+.login-container {
+  height: 50vh;
+}
+
+.signup-container {
+  height: 50vh;
+}
+
+
+
+
 /* ------------ FOOTER PAGE STYLING ----------- */
 
 .footer {
@@ -290,4 +315,12 @@ body {
   #carousel-image {
     max-width: 200px;
   }
+  /* .home-container {
+    height: none;
+  } */
+
+  .home-tiles {
+    margin: 10px;
+  }
+
 }
