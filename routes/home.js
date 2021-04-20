@@ -173,12 +173,11 @@ router.get("/user/new", isAuthorized, async (req, res) => {
 });
 
 // DELETE route
-router.delete("/user/profile/:id", isAuthorized, async (req, res) => {
+router.delete("/user/profile/:id", async (req, res) => {
   const id = req.params.id;
   const index = req.user.plants.findIndex((plant) => `${plant._id}` === id);
-//   console.log(plant);
-//   req.user.plant.splice(index, 1);
-//   req.user.save();
+  req.user.plants.splice(index, 1);
+  req.user.save();
   res.redirect("/user/profile");
 });
 
