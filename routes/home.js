@@ -173,7 +173,7 @@ router.get("/user/new", isAuthorized, async (req, res) => {
 });
 
 // DELETE route
-router.delete("/user/profile/:id", async (req, res) => {
+router.delete("/user/profile/:id", isAuthorized, async (req, res) => {
   const id = req.params.id;
   const index = req.user.plants.findIndex((plant) => `${plant._id}` === id);
 //   console.log(plant);
@@ -205,7 +205,7 @@ router.post("/user/new", isAuthorized, async (req, res) => {
   user.plants.push(req.body);
   await user.save();
   // redirect back to user profile
-  res.redirect("/user/profile", { isLoggedIn: req.session.userId });
+  res.redirect("/user/profile");
 });
 
 // EDIT form is in user show page

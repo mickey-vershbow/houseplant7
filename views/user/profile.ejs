@@ -19,17 +19,16 @@
     </section>
 
     <main class="profile-container">
-      <div class="container is-fluid">
+      <div class="container is-fluid profile-plants">
     <% for(let i = 0; i < plants.length; i++) { %>
       <br>
-      <figure class="image is-128x128">
+      <figure class="image is-128x128 profile-plants-links">
         <!-- SHOW PAGE -->
         <a href="/user/profile/<%=plants[i]._id;%>">
           <img src="<%= plants[i].url %>" />
           <p class="has-text-centered"><%= plants[i].name %></p>
       </a>
        <!-- DELETE FORM -->
-
               <form action="/user/profile/<%=plants[i]._id; %>?_method=DELETE" method="POST" class="delete-button">
                 <input type="submit" value="Delete Plant" class="button is-danger is-outlined is-fullwidth"/>
               </form>

@@ -279,6 +279,14 @@ body {
   height: 80vh;
 }
 
+.container.is-fluid.profile-plants {
+    height: 80vh;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 /* ------ USER AUTH STYLING --------  */
 .login-container {
   height: 50vh;
